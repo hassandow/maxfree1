@@ -1,0 +1,32 @@
+directories:
+  output: dist
+  buildResources: build
+appId: ly.hassandow.camera.sales
+productName: CameraSalesSystem
+artifactName: ${productName} Setup v${version}.${ext}
+asar: true
+files:
+  - filter:
+      - index.html
+      - main.js
+      - preload.js
+      - camera-hikvision.jpg
+      - version.json
+      - assets/**/*
+publish:
+  provider: github
+  owner: hassandow
+  repo: hassan2016max
+  releaseType: release
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: CameraSalesSystem
+electronVersion: 44.11.3
